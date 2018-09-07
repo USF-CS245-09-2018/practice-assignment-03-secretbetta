@@ -15,27 +15,28 @@ public int find_min_iterative () {
 This runs in O(n) time because this will always 
 run the length of the array squared.
 
+------------------------------------------------------------------
 Find Min Recursive
 public int find_min_recursive () {
-		int index = arr.length - 1;  -> O(1)
-		int currIndex = index; -> O(1)
+	int index = arr.length - 1;  -> O(1)
+	int currIndex = index; -> O(1)
+	return min(currIndex, index);
+}
+
+public int min(int currIndex, int index) {
+	if (index == 0) {  -> O(1)
+		if (arr[currIndex] > arr[index]) {  -> O(1)
+			return index;
+		} else {
+			return currIndex;
+		}
+	} else {
+		if (arr[currIndex] > arr[index]) {  -> O(1)
+			currIndex = index;
+		}
+		index--;
 		return min(currIndex, index);
 	}
-	
-	public int min(int currIndex, int index) {
-		if (index == 0) {  -> O(1)
-			if (arr[currIndex] > arr[index]) {  -> O(1)
-				return index;
-			} else {
-				return currIndex;
-			}
-		} else {
-			if (arr[currIndex] > arr[index]) {  -> O(1)
-				currIndex = index;
-			}
-			index--;
-			return min(currIndex, index);
-		}
-	}
+}
 This runs O(1) because the most amount of recursive calls are equal to the 
 number of elements in the array minus 1.
