@@ -38,5 +38,5 @@ public int min(int currIndex, int index) {
 		return min(currIndex, index);
 	}
 }
-This runs O(1) because the most amount of recursive calls are equal to the 
+This runs O(n) because the most amount of recursive calls are equal to the 
 number of elements in the array minus 1.
