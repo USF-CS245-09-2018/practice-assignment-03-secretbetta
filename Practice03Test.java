@@ -56,11 +56,9 @@ public class Practice03Test {
 		double min = Integer.MAX_VALUE;
 		int index = 0;
 		for (int i = 0; i < arr.length; i++) {
-			for (int j = 0; j < arr.length; j++) {
-				if (min > arr[i]) {
+			if (min > arr[i]) {
 					min = arr[i];
 					index = i;
-				}
 			}
 		}
 		return index;
